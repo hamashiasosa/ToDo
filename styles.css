@@ -85,4 +85,13 @@ body {
     background-color: #f9f9f9;
   }
   
-  
+  a {
+    text-decoration: none; 
+    color: #000000; 
+    background-color: #dddddd; 
+    padding: 5px; 
+    border-radius: 5px; 
+    font-size: 12px; 
+    cursor: pointer;
+    margin-left: 10%;
+  }

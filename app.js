@@ -50,8 +50,43 @@ function deleteTask(index) {
   updateTaskList();
 }
 
+function toggleDeleteTask(index) {
+  if (confirm("¿Estás seguro de que deseas eliminar esta tarea?")) {
+    tasks.splice(index, 1);
+    updateTaskList();
 
+  }
+}
 
+function updateTaskList() {
+  taskList.innerHTML = "";
+  for (var i = 0; i < tasks.length; i++) {
+    var task = tasks[i];
+    var taskItem = document.createElement("li");
+    taskItem.innerText = task.name;
+
+    // Crear el enlace de eliminar
+    var deleteLink = document.createElement("a");
+    deleteLink.innerText = "Eliminar";
+    deleteLink.href = "#";
+    deleteLink.addEventListener("click", toggleDeleteTask.bind(null, i));
+
+    // Agregar el enlace de eliminar al elemento de tarea
+    var deleteLink = document.createElement("a");
+    deleteLink.innerText = "Eliminar";
+    deleteLink.href = "#";
+    deleteLink.addEventListener("click", toggleDeleteTask.bind(null, i));
+
+    // Agregar el enlace de eliminar al elemento de tarea
+    taskItem.appendChild(deleteLink);
+
+    if (task.completed) {
+      taskItem.classList.add("completed");
+    }
+    taskItem.addEventListener("click", toggleTaskCompletion.bind(null, i));
+    taskList.appendChild(taskItem);
+  }
+}
 // Evento que permite dar clic en el botón de agregar tarea
 addButton.addEventListener("click", addTask);
 
