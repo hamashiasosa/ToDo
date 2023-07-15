@@ -1,0 +1,88 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/img/fondo.png");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    border: 2px solid #abece4;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #fcd036;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 19px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 19px;
+    background-color: #abece4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: #fcd036;
+    transition-duration: 1s;
+
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  li.completed::after {
+    content: '\2714';
+    font-size: 19px;
+    color: #28a745;
+    margin-left: 10px;
+  }
+  
+  li.completed:hover::after {
+    color: #28a745;
+  }
+  
+  li.completed:hover {
+    background-color: #f9f9f9;
+  }
+  
+  
